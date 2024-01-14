@@ -1,14 +1,47 @@
+"use client"
+
 import Link from "next/link";
+import {useRef, useState} from "react"
 
 export default function Register() {
+	const [error, setError] = useState("")
+	
+	const nameRef = useRef()
+	const emailRef = useRef()
+	const passwordRef = useRef()
+	const confPasswordRef = useRef()
+	
+	const handleRegister = async () => {
+		const data = {
+			name: nameRef.current.value,
+			email: emailRef.current.value,
+			password: passwordRef.current.value,
+			confPassword: confPasswordRef.current.value
+		}
+		if(!data.name || !data.email || !data.password || !data.confPassword) return;
+		if(data.password !== data.confPassword) return;
+		const response = await fetch("/api/users", {
+			method: "POST",
+			body: JSON.stringify(data)
+		})
+		if(response.status >= 200) {
+			setError(response.statusText)
+		}
+	}
+	
 	return (
 		<main className="w-screen h-screen bg-gray-800">
 			<div className="w-full h-full flex items-center justify-center">
 				<div className="w-[350px] h-auto p-3 flex flex-col justify-start items-center gap-5 bg-white shadow-md shadow-indigo-500 rounded-lg">
-					<div className="w-full h-8 flex justify-center items-center">
+					<div className="w-full h-10 flex flex-col gap-2 justify-center items-center">
 						<h1 className="font-bold text-3xl text-black tracking-wide">
 							Sign Up
 						</h1>
+						{
+							error !== "" ? (
+								<span>{error}</span>
+							) : null
+						}
 					</div>
 					<div className="w-full h-auto flex flex-col gap-4">
 						<div className="w-full h-auto flex flex-col gap-1">
@@ -22,6 +55,7 @@ export default function Register() {
 									type="text"
 									placeholder="Masukkan Nama"
 									id="name"
+									ref={nameRef}
 									className="outline-none border-none w-full h-full"
 								/>
 							</div>
@@ -37,6 +71,7 @@ export default function Register() {
 									type="email"
 									placeholder="Masukkan Email"
 									id="email"
+									ref={emailRef}
 									className="outline-none border-none w-full h-full"
 								/>
 							</div>
@@ -50,6 +85,7 @@ export default function Register() {
 									type="password"
 									placeholder="**********"
 									id="pw"
+									ref={passwordRef}
 									className="outline-none border-none w-full h-full"
 								/>
 							</div>
@@ -65,6 +101,7 @@ export default function Register() {
 									type="password"
 									placeholder="**********"
 									id="confPw"
+									ref={confPasswordRef}
 									className="outline-none border-none w-full h-full"
 								/>
 							</div>
@@ -73,6 +110,7 @@ export default function Register() {
 					<div className="w-full h-auto flex flex-col gap-5 justify-center items-center">
 						<button
 							type="button"
+							onClick={handleRegister}
 							className="w-full flex items-center justify-center py-2 text-black text-xl font-bold bg-red-600 hover:bg-red-700">
 							Sign Up
 						</button>
