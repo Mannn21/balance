@@ -43,6 +43,6 @@ export const POST = async req => {
         })
         return NextResponse.json({message: "Ok"}, {status: 201, statusText: "User berhasil dibuat!"})
 	} catch (error) {
-        return NextResponse.json({message: error})
+        return NextResponse.json({message: error}, {status: 500, statusText: "Internal server error"})
     }
 };
