@@ -1,4 +1,5 @@
 import Sidebar from "@/components/Sidebar";
+import Navbar from "@/components/Navbar";
 
 export default function DashboardLayout({ children }) {
 	return (
@@ -6,7 +7,12 @@ export default function DashboardLayout({ children }) {
 			<aside>
 				<Sidebar />
 			</aside>
-			<main>{children}</main>
+			<main className="w-full h-full px-3 py-5 box-border">
+				<div className="w-full h-full flex flex-col gap-2 overflow-auto">
+					<Navbar />
+					<div className="w-full h-full">{children}</div>
+				</div>
+			</main>
 		</div>
 	);
 }

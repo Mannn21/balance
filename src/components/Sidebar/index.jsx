@@ -23,7 +23,7 @@ const Sidebar = () => {
 						})}
 					</div>
 					<div className="fixed bottom-2 left-2">
-						<button className="w-full flex flex-row gap-2 items-center justify-start p-1 text-gray-400 hover:text-red-600">
+						<button className="w-full flex flex-row gap-2 items-center justify-start p-1 text-color-gray hover:text-color-secondary">
 							<FaPowerOff size={25} />
 						</button>
 					</div>

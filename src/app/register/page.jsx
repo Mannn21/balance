@@ -19,10 +19,8 @@ export default function Register() {
 	useEffect(() => {
 		const balanceToken = window.localStorage.getItem("balanceToken");
 
-		// Mengupdate state sesuai dengan hasil pengecekan
 		setTokenExist(!!balanceToken);
 
-		// Jika token ada, redirect
 		if (balanceToken) {
 			router.push("/dashboard");
 		}

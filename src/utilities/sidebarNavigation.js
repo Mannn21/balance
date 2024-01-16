@@ -1,5 +1,5 @@
 import { MdDashboard } from "react-icons/md";
-import { FaHeart, FaUser } from "react-icons/fa";
+import { FaHeart } from "react-icons/fa";
 import { FaMoneyBill1Wave } from "react-icons/fa6";
 import { MdSavings } from "react-icons/md";
 import { HiChartBar } from "react-icons/hi";
@@ -29,10 +29,5 @@ export const sidebarNavigation = [
         title: "Graphics",
         image: <HiChartBar size={25} />,
         link: "/dashboard/graphics"
-    },
-    {
-        title: "Profile",
-        image: <FaUser size={25} />,
-        link: "/dashboard/profile"
     }
 ]
