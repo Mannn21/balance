@@ -11,14 +11,15 @@ module.exports = {
 				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
 				"gradient-conic":
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-				"gradient-with-alpha": "linear-gradient(90deg, rgba(249, 118, 157, 1), rgba(249, 118, 157, 0.5))"
+				"gradient-with-alpha":
+					"linear-gradient(90deg, rgba(249, 118, 157, 1), rgba(249, 118, 157, 0.5))",
 			},
 		},
-		linearGradientColors: {
-		},
+		linearGradientColors: {},
 		colors: {
 			color: {
-				pinkOpacity: 'rgba(249, 118, 157, 0.2)',
+				pinkOpacity: "rgba(249, 118, 157, 0.2)",
+				grayOpacity: "rgba(255, 255, 255, .1)",
 				primary: "#171821",
 				dark: "#21222d",
 				secondary: "#f9769d",
@@ -26,6 +27,8 @@ module.exports = {
 				accent: "#a07bc8",
 				white: "#ffffff",
 				gray: "#9CA3AF",
+				red: "#f00607",
+				green: "#00ff00",
 			},
 		},
 	},
