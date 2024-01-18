@@ -19,6 +19,7 @@ module.exports = {
 		colors: {
 			color: {
 				pinkOpacity: "rgba(249, 118, 157, 0.2)",
+				pinkOpacityBold: "rgba(249, 118, 157, 0.6)",
 				grayOpacity: "rgba(255, 255, 255, .1)",
 				primary: "#171821",
 				dark: "#21222d",

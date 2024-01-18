@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import ProgressBar from "./ProgressBar.jsx";
+import ProgressBar from "./ProgressBar";
 import { FaArrowTrendUp, FaArrowTrendDown } from "react-icons/fa6";
 
 const BarChartCard = ({ yesterday, today, target, category, color }) => {
@@ -30,8 +30,15 @@ const BarChartCard = ({ yesterday, today, target, category, color }) => {
 					{today > yesterday ? <FaArrowTrendUp /> : <FaArrowTrendDown />}
 				</div>
 				<div className="w-full h-auto flex justify-between items-center">
-					<span className="text-2xl font-bold text-color-white">$ {count} / $ {target}</span>
-					<span className={`text-md ${today > yesterday ? "text-color-green" : "text-color-red"}`}>{percentage}%</span>
+					<span className="text-2xl font-bold text-color-white">
+						$ {count} / $ {target}
+					</span>
+					<span
+						className={`text-md ${
+							today > yesterday ? "text-color-green" : "text-color-red"
+						}`}>
+						{percentage}%
+					</span>
 				</div>
 				<div className="w-full h-3 flex justify-start items-start">
 					<ProgressBar count={count} target={target} color={color} />
