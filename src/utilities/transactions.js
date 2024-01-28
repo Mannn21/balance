@@ -29,10 +29,4 @@ export const transactions = [
         time: "19:38",
         price: "$ 1125"
     },
-    // {
-    //     title: "Lunch",
-    //     category: "Primary",
-    //     time: "20:45",
-    //     price: "$ 285"
-    // },
 ]

@@ -1,6 +1,6 @@
-import PieChartByCategory from "../../PieChartByCategory";
+import PieChartByCategory from "../PieChartByCategory";
 
-const TotalBalance = () => {
+const TotalIncome = () => {
 	return (
 		<div className="w-full h-32 bg-color-dark rounded-xl shadow-color-tersier overflow-hidden">
 			<div className="w-full h-full bg-gradient-to-l from-color-pinkOpacity to-35%">
@@ -17,7 +17,7 @@ const TotalBalance = () => {
 						<PieChartByCategory
 							count={130}
 							target={150}
-							category={"Total Expense"}
+							category={"Total Salary"}
 							color={"#96a7ff"}
 						/>
 					</div>
@@ -35,4 +35,4 @@ const TotalBalance = () => {
 	);
 };
 
-export default TotalBalance;
+export default TotalIncome;

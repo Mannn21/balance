@@ -1,6 +1,6 @@
-import AreaCharts from "../../AreaChart";
+import AreaCharts from "../AreaChart";
 
-const Graphic = () => {
+const GraphicIncome = () => {
 	return (
 		<div className="w-full h-80 bg-color-dark rounded-xl shadow-color-tersier overflow-hidden">
 			<div className="w-full h-full flex flex-col gap-2 p-2 bg-gradient-to-l from-color-pinkOpacity to-35%">
@@ -22,4 +22,4 @@ const Graphic = () => {
 	);
 };
 
-export default Graphic;
+export default GraphicIncome;
