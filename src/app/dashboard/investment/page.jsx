@@ -1,10 +1,10 @@
 "use client";
 
-import Target from "@/components/Savings/Target";
-import GoalLists from "@/components/Savings/GoalLists";
-import GraphicSavings from "@/components/Savings/GraphicSavings";
+import Capitals from "@/components/Invest/Capitals";
+import Graphics from "@/components/Invest/Graphics";
+import Tables from "@/components/Invest/Tables";
 
-export default function Savings() {
+export default function Investment() {
 	if (typeof window !== "undefined") {
 		const balanceToken = window.localStorage.getItem("balanceToken");
 		if (!balanceToken) {
@@ -15,9 +15,9 @@ export default function Savings() {
 	return (
 		<div className="w-full h-auto flex flex-col md:flex-row gap-5 p-4">
 			<div className="w-full h-auto flex flex-col gap-5 items-center justify-start">
-				<Target />
-                <GraphicSavings />
-				<GoalLists />
+				<Capitals />
+				<Tables />
+				<Graphics />
 			</div>
 		</div>
 	);

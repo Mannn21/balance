@@ -1,8 +1,7 @@
 import { MdDashboard } from "react-icons/md";
 import { FaHeart } from "react-icons/fa";
 import { FaMoneyBill1Wave } from "react-icons/fa6";
-import { MdSavings } from "react-icons/md";
-import { HiChartBar } from "react-icons/hi";
+import { MdSavings, MdCandlestickChart } from "react-icons/md";
 
 export const sidebarNavigation = [
     {
@@ -26,8 +25,8 @@ export const sidebarNavigation = [
         link: "/dashboard/savings"
     },
     {
-        title: "Graphics",
-        image: <HiChartBar size={25} />,
-        link: "/dashboard/graphics"
+        title: "Investment",
+        image: <MdCandlestickChart size={25} />,
+        link: "/dashboard/investment"
     }
 ]
