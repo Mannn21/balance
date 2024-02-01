@@ -15,13 +15,13 @@ export const POST = async req => {
 	const { name, email, password, confPassword } = await req.json();
 	if (!name || !email || !password || !confPassword)
 		return NextResponse.json(
-			{ message: "Bad Request" },
-			{ status: 400, statusText: "Mohon isi data dengan lengkap" }
+			{ message: "Mohon isi data dengan lengkap" },
+			{ status: 400, statusText: "Bad Request" }
 		);
 	if (password !== confPassword) {
 		return NextResponse.json(
-			{ message: "Bad Request" },
-			{ status: 400, statusText: "Konfirmasi password tidak sesuai" }
+			{ message: "Konfirmasi password tidak sesuai" },
+			{ status: 400, statusText: "Bad Request" }
 		);
 	}
 	try {
@@ -33,7 +33,7 @@ export const POST = async req => {
 		let isUserExist;
         searchUserByEmail.forEach(doc => isUserExist = doc.exists())
         if(isUserExist) {
-            return NextResponse.json({message: "Conflict"}, {status: 409, statusText: "Email sudah terdaftar"})
+            return NextResponse.json({message: "Email sudah terdaftar"}, {status: 409, statusText: "Conflict"})
         }
 		const id = uuidv4();
 		const salt = await bcrypt.genSalt(10);
@@ -41,7 +41,7 @@ export const POST = async req => {
         await setDoc(doc(db, "users", id), {
             name, email, password: encryptedPassword
         })
-        return NextResponse.json({message: "Ok"}, {status: 201, statusText: "User berhasil dibuat!"})
+        return NextResponse.json({message: "User berhasil dibuat!"}, {status: 201, statusText: "Ok"})
 	} catch (error) {
         return NextResponse.json({message: error}, {status: 500, statusText: "Internal server error"})
     }
