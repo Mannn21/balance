@@ -4,8 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 import { db } from "@/app/firebase";
 
 export const POST = async req => {
-	const { userId, title, date, deadline, bill, status, category, description } = await req.json();
-	if (!userId || !title || !date || !deadline || !bill || !status || !category) {
+	const { userId, title, date, deadline, bill, status, category, description, source } = await req.json();
+	if (!userId || !title || !date || !deadline || !bill || !status || !category || !source) {
 		return NextResponse.json(
 			{ message: "Mohon isi data dengan lengkap" },
 			{ status: 400, statusText: "Bad Request" }
@@ -23,7 +23,7 @@ export const POST = async req => {
 		if (searchUserById.exists()) {
 			const id = uuidv4();
 			await setDoc(doc(db, "expense", id), {
-				userId, title, date, deadline, bill, status, category, description
+				userId, title, date, deadline, bill, status, category, description, source
 			});
             return NextResponse.json({message: "Data expense berhasil dibuat!"}, {status: 201, statusText: "Ok"})
 		}

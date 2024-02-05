@@ -1,12 +1,12 @@
 "use client";
 
 import { redirect } from "next/navigation";
-import TotalBalance from "@/components/Dashboard/RightSection/TotalBalance";
-import Graphic from "@/components/Dashboard/RightSection/Graphic";
-import BarChartCard from "@/components/Dashboard/RightSection/BarChartCard";
+import TotalBalance from "@/components/Dashboard/LeftSection/TotalBalance";
+import Graphic from "@/components/Dashboard/LeftSection/Graphic";
+import BarChartCard from "@/components/Dashboard/LeftSection/BarChartCard";
 import { IoMdMore } from "react-icons/io";
-import Card from "@/components/Dashboard/LeftSection/Card";
-import TransactionCard from "@/components/Dashboard/LeftSection/TransactionCard";
+import Card from "@/components/Dashboard/RightSection/Card";
+import TransactionCard from "@/components/Dashboard/RightSection/TransactionCard";
 import { transactions } from "@/utilities/transactions";
 
 export default function Dashboard() {

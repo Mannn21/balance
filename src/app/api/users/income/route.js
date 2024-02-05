@@ -14,6 +14,7 @@ export const POST = async req => {
 		status,
 		category,
 		description,
+		target
 	} = await req.json();
 	if (
 		!userId ||
@@ -23,7 +24,8 @@ export const POST = async req => {
 		!reward ||
 		!bonus ||
 		!status ||
-		!category
+		!category ||
+		!target
 	) {
 		return NextResponse.json(
 			{ message: "Mohon isi data dengan lengkap" },
@@ -51,6 +53,7 @@ export const POST = async req => {
 				status,
 				category,
 				description,
+				target
 			});
 			return NextResponse.json(
 				{ message: "Data income berhasil dibuat!" },

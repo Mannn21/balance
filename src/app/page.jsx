@@ -31,14 +31,15 @@ export default function Home() {
 			email: emailRef.current.value,
 			password: passwordRef.current.value,
 		};
-
+		console.log(body)
 		const response = await fetch("/api/login", {
 			method: "POST",
 			body: JSON.stringify(body),
 		});
-		const { message, token } = await response.json();
+		const { message, payload } = await response.json();
 		if (message === "Ok" && response.status < 300) {
-			window.localStorage.setItem("balanceToken", token);
+			window.localStorage.setItem("balanceToken", payload.token);
+			window.localStorage.setItem("balanceUserId", payload.userId)
 			return router.push("/dashboard");
 		}
 		return setError(response.statusText);
